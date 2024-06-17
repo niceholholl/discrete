@@ -9,9 +9,18 @@
 
 ## How to download
 
-모듈을 다운 받기 위해 
+모듈을 다운 받기 위해 위의 코드에서 Zip파일을 다운받아 사용합니다. 이후 이 모듈 속 함수를 실행하고자하는 Colab Notebook에 이를 설치하여 실행합니다.
 
 ## How to use
+
+(확인 예시)
+import relationcheck as rc  # import로 모듈을 불러옴
+A = {1,2,3,4}  # 관계가 정의된 집합
+R = {(1, 1), (1, 3), (2, 2), (3, 3), (3, 1), (3, 4), (4, 4), (4, 3)}  # 정의된 관계
+print(rc.check_transitive(R))  # 출력 : False ~ (1,3)과 (3,4)에 대한 추이성을 나타내는 (1,4)가 존재하지 않음
+print(rc.check_symmetric(R))  # 출력 : True
+print(rc.check_reflexive(R))  # 출력 : True
+print(rc.check_equivalance(R))  # 출력 : False ~ 추이적 성질을 띠지 못하여 동치 관계가 아님
 
 
 
